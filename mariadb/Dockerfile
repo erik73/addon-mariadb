@@ -1,12 +1,24 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+ARG BUILD_FROM=ghcr.io/erik73/base/amd64:4.0.7
+FROM ${BUILD_FROM}
+
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+# Build arguments
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_DESCRIPTION
+ARG BUILD_NAME
+ARG BUILD_REF
+ARG BUILD_REPOSITORY
+ARG BUILD_VERSION
 
 # Setup base
 RUN apk add --no-cache \
-    mariadb \
-    mariadb-client \
-    mariadb-server-utils \
-    pwgen
+    mariadb=11.4.5-r0 \
+    mariadb-client=11.4.5-r0 \
+    mariadb-server-utils=11.4.5-r0 \
+    pwgen=2.08-r3
 
 ENV \
     LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
@@ -15,3 +27,22 @@ ENV \
 COPY rootfs /
 
 WORKDIR /
+
+LABEL \
+    io.hass.name="${BUILD_NAME}" \
+    io.hass.description="${BUILD_DESCRIPTION}" \
+    io.hass.arch="${BUILD_ARCH}" \
+    io.hass.type="addon" \
+    io.hass.version=${BUILD_VERSION} \
+    maintainer="Erik Hilton <erikhilton73@gmail.com>" \
+    org.opencontainers.image.title="${BUILD_NAME}" \
+    org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
+    org.opencontainers.image.vendor="Erik73 Hassio-Addons" \
+    org.opencontainers.image.authors="Erik Hilton <erikhilton73@gmail.com>" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="https://github.com/erik73/hassio-addons" \
+    org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
+    org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
