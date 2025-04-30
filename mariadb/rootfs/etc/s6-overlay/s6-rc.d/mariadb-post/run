@@ -26,10 +26,10 @@ bashio::log.info "MariaDB started"
 execute_without_error_messages bashio::services.delete "mysql" || true
 
 bashio::log.info "Check data integrity and fix corruptions"
-mariadbcheck --no-defaults --databases mysql --fix-db-names --fix-table-names || true
-mariadbcheck --no-defaults --databases mysql --check --check-upgrade --auto-repair || true
-mariadbcheck --no-defaults --all-databases --skip-database=mysql --fix-db-names --fix-table-names || true
-mariadbcheck --no-defaults --all-databases --skip-database=mysql --check --check-upgrade --auto-repair || true
+mariadb-check --no-defaults --databases mysql --fix-db-names --fix-table-names || true
+mariadb-check --no-defaults --databases mysql --check --check-upgrade --auto-repair || true
+mariadb-check --no-defaults --all-databases --skip-database=mysql --fix-db-names --fix-table-names || true
+mariadb-check --no-defaults --all-databases --skip-database=mysql --check --check-upgrade --auto-repair || true
 
 bashio::log.info "Ensuring internal database upgrades are performed"
 mariadb-upgrade --silent
