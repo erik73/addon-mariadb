@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/erik73/base/:4.0.9
+ARG BUILD_FROM=ghcr.io/erik73/base:4.0.9
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -22,7 +22,6 @@ RUN \
         mariadb-server-utils=11.4.5-r0 \
         pwgen=2.08-r3
     \
-
 # Copy data
 COPY rootfs /
 
