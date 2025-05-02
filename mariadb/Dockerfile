@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/erik73/base/amd64:4.0.9
+ARG BUILD_FROM=ghcr.io/erik73/base/:4.0.9
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -15,19 +15,16 @@ ARG BUILD_REPOSITORY
 ARG BUILD_VERSION
 
 # Setup base
-RUN apk add --no-cache \
-    mariadb=11.4.5-r0 \
-    mariadb-client=11.4.5-r0 \
-    mariadb-server-utils=11.4.5-r0 \
-    pwgen=2.08-r3
-
-ENV \
-    LD_PRELOAD="/usr/local/lib/libjemalloc.so.2"
+RUN \
+    apk add --no-cache \
+        mariadb=11.4.5-r0 \
+        mariadb-client=11.4.5-r0 \
+        mariadb-server-utils=11.4.5-r0 \
+        pwgen=2.08-r3 \
+    \
 
 # Copy data
 COPY rootfs /
-
-WORKDIR /
 
 LABEL \
     io.hass.name="${BUILD_NAME}" \
