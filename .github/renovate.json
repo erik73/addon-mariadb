@@ -34,10 +34,10 @@
       "automerge": true
     },
     {
-      "groupName": "PHP",
+      "groupName": "MariaDB",
       "matchDatasources": ["repology"],
       "automerge": true,
-      "matchDepNames": ["/alpine.*/php.*/"]
+      "matchDepNames": ["/alpine.*/mariadb.*/"]
     },
     {
       "groupName": "Add-on base image",
