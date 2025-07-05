@@ -1,4 +1,4 @@
-# Home Assistant Add-on: MariaDB
+# Home Assistant Add-on: "Unofficial" MariaDB
 
 ![Project Stage][project-stage-shield]
 
@@ -14,6 +14,7 @@
 
 ## About
 
+This is a fork of the official MariaDB add-on, made for testing stuff. Do not use, as this can break at any time.
 You can use this add-on to install MariaDB, which is an open-source (GPLv2 licensed) database. MariaDB can be used as the database backend for Home Assistant. For more information, please see [MariaDB][mariadb]
 
 ## Support
