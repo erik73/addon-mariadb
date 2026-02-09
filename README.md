@@ -24,7 +24,7 @@ You could [open an issue here][issue] GitHub.
 
 MIT License
 
-Copyright (c) 2019-2025 Erik Hilton
+Copyright (c) 2019-2026 Erik Hilton
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,10 +46,10 @@ SOFTWARE.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/erik73/addon-mariadb.svg
-[commits]: https://github.com/erik73/addon-mariadb/commits/main
-[github-actions-shield]: https://github.com/erik73/addon-mariadb/workflows/CI/badge.svg
-[github-actions]: https://github.com/erik73/addon-mariadb/actions
-[issue]: https://github.com/erik73/addon-mariadb/issues
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/erik73/app-mariadb.svg
+[commits]: https://github.com/erik73/app-mariadb/commits/main
+[github-actions-shield]: https://github.com/erik73/app-mariadb/workflows/CI/badge.svg
+[github-actions]: https://github.com/erik73/app-mariadb/actions
+[issue]: https://github.com/erik73/app-mariadb/issues
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
